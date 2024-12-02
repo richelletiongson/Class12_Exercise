@@ -83,10 +83,26 @@ let settings = {
 }
 
 function createUsers(){
-      //user readline to prompt for the name of the user to be added
+      readline.question("Enter User Name: ", (userName) => {
+        readline.question("Assign a Role (moderator/simple/coAdmin):", (roleName) => {
+          if (!role[roleName]){                    //this is to check if the roleName inputted is in the roles array.  
+            console.log("Invalid role, try again"); 
+            StartApp();
+            return;
+          }
+          const newUser = {
+            userNameame, 
+            role: roleName, 
+            permissions: role[roleName],
+          };
+          users.push(newUser);
+          console.log('User ${name} has been added with the role ${roleName}.');
+          StartApp();
+        }
+       );
+      });
 }
 
-//CHALLENGE 2 ONLINE
 function assignRole(){
     //user readline to prompt for the new roles to be added to system
 }
