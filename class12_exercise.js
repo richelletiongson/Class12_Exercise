@@ -104,7 +104,17 @@ function createUsers(){
 }
 
 function assignRole(){
-    //user readline to prompt for the new roles to be added to system
+    listUsers();
+    readline.question("Select a User by Their Corresponding Number to Assign Them a New Role:", (num) => {
+      const index = parseInt(num) - 1;
+      readline.question("Assign a New Role (moderator/simple/coAdmin):", (roleName) => {
+        users[index].role = roleName;
+        users[index].permissions = role[roleName];
+        console.log('The role for ${users[index].name} has been updated to ${roleName}.');
+        StartApp();
+      }
+      );
+    }); 
 }
 
 function listUsers(){
