@@ -192,4 +192,7 @@ function StartApp() {
   }
 
   StartApp();
+
+  // Code seems functional and has clear planning. 
+  //Reviewed by: Beau
   
