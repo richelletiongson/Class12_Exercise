@@ -40,7 +40,12 @@ each user. Key will represent the permission name and user.permissions[key] will
 CHALLENGE 1:
 Create a new function that will toggle all permissions on or off using a for loop and "let key in obj". If the command the user chooses is to turn permissions on the the state 
 in the function will be true. If the command they choose is to turn off permissions then the state will be false.
- */
+
+CHALLENGE 2:
+Assigning permission, list users using listUsers() function. (opted out)
+
+
+*/
 
 let users = [];
 
@@ -125,8 +130,11 @@ function listUsers(){
 }
 
 function assignPermissions(){
-    //user readline to prompt for the admin to give list out added users and give individual permissions for each setting. 
-    // This should give roles automatically based on whats assigned to the user based on conditions met.
+  listUsers();
+  readline.question("Which user would you like to change permissions for? (select user's corresponding number)", (num) => {
+    const index = parseInt(num) - 1;
+   //Opting out of challenge 2!
+  });
 }
 
 function showPermissions(){
