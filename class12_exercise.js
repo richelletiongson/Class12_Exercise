@@ -108,7 +108,10 @@ function assignRole(){
 }
 
 function listUsers(){
-    //user readline to list out users
+    for (let i = 0; i < users.length; i++){
+      console.log('${i + 1}. ${users[i]} - Role: ${users[i].role}, Permissions: ${users[i].permissions}');
+    }
+  StartApp();
 }
 
 function assignPermissions(){
