@@ -138,7 +138,15 @@ function assignPermissions(){
 }
 
 function showPermissions(){
-    //loop through all the users settings and roles based on their permissions
+  console.log("User Permissions: ");
+  for (let user of users) {
+    console.log(`${user.name} - Role: ${user.role}`);
+    console.log("Permissions:");
+    for (let key in user.permissions) {
+      console.log(`${key}: ${user.permissions[key]}`);
+    }
+  }
+  StartApp();
 }
 
 function StartApp() {
