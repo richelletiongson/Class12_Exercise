@@ -149,7 +149,16 @@ function showPermissions(){
   StartApp();
 }
 
+function togglePermissions(state) {
+  for (let key in settings) {
+    settings[key] = state;
+  }
+  console.log(`All permissions are turned ${state}.`);
+  StartApp();
+}
+
 function StartApp() {
+    console.log()
     readline.question("What would you like to do? ", (_command) => {
       
       //add other commands here to add
