@@ -158,19 +158,38 @@ function togglePermissions(state) {
 }
 
 function StartApp() {
-    console.log()
-    readline.question("What would you like to do? ", (_command) => {
-      
-      //add other commands here to add
-  
-    
-      if (_command !== "quit") {
-        StartApp();
-      } else {
+  console.log("Commands:");
+  console.log("1. Add User");
+  console.log("2. List Users");
+  console.log("3. Assign Role");
+  console.log("4. Show Permissions");
+  console.log("5. Turn All Permissions On");
+  console.log("6. Turn All Permissions Off");
+  console.log("Type 'quit' to exit.");
+
+    readline.question("What would you like to do? (Use corresponding number of command.)", (_command) => {
+   
+      if (_command === "1"){
+        createUsers();
+      } else if (_command === "2"){
+        listUsers();
+      } else if (_command === "3"){
+        assignRole();
+      } else if (_command === "4"){
+        showPermissions();
+      } else if (_command === "5"){
+        togglePermissions(true);
+      } else if (_command === "6"){
+        togglePermissions(false);
+      } else if(_command !== "quit") {
         readline.close();
+        return;
+      } else {
+        console.log("Invalid command, try again.")
+        StartApp();
       }
     });
   }
-  
+
   StartApp();
   
